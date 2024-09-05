@@ -1,0 +1,276 @@
+.bg-banner {
+  background-image: url(../images/home-header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 787px;
+  @include pad {
+    background-image: url(../images/home-header-sm.png);
+  }
+  @include mobile {
+    height: 396px;
+  }
+}
+.banner {
+  &-content {
+    width: 44.5%;
+    @include pad {
+      width: 100%;
+    }
+    @include mobile {
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+  &-btn {
+    width: 104px;
+    padding: 6px 12px;
+  }
+}
+
+.feature-img {
+  width: 100px;
+}
+@include pad {
+  .col-md-6 {
+    width: 50%;
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 24px;
+    }
+  }
+}
+@include mobile {
+  .features {
+    h4 {
+      font-size: 24px;
+    }
+  }
+  .col-sm-12 {
+    width: 100%;
+    &:not(:nth-last-child(-n + 1)) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.classic {
+  h2 {
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+  &-img {
+    width: 100%;
+    height: 416px;
+    @include bg-cover;
+    @include pad {
+      height: 336px;
+    }
+    @include mobile {
+      height: 348px;
+    }
+  }
+  ul {
+    @include pad {
+      flex-direction: column;
+      align-items: center;
+    }
+    li {
+      @include pad {
+        width: 43.75%;
+      }
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.bg-feat {
+  background-image: url(../images/index-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include pad {
+    background-image: url(../images/index-bg-sm.png);
+  }
+  @include mobile {
+    background-image: url(../images/index-bg-md.png);
+  }
+}
+.feat {
+  h2 {
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+  ul {
+    width: 100%;
+    @include pad {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+  }
+  &-category {
+    width: 50%;
+    @include pad {
+      width: 100%;
+    }
+    h3 {
+      background-color: #fff;
+    }
+  }
+  &-category:nth-child(1) {
+    .feat-img {
+      background-image: url(../images/home-section4-1.png);
+      @include mobile {
+        background-image: url(../images/home-section4-1-sm.png);
+      }
+    }
+  }
+  &-category:nth-child(2) {
+    .feat-img {
+      background-image: url(../images/home-section4-2.png);
+      @include mobile {
+        background-image: url(../images/home-section4-2-sm.png);
+      }
+    }
+  }
+  &-img {
+    width: 100%;
+    height: 240px;
+    @include bg-cover;
+  }
+}
+
+.recommendation {
+  h4 {
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+  ul {
+    @include pad {
+      flex-wrap: wrap;
+    }
+  }
+  &-card {
+    height: 511px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0px 2px 6px #00000029;
+    border-radius: 4px;
+    @include pad {
+      width: calc(50% - 12px);
+    }
+    @include mobile {
+      width: 100%;
+    }
+    &-img {
+      height: 60%;
+      @include bg-cover;
+    }
+  }
+  &-text {
+    height: 40%;
+    padding: 16px;
+    time {
+      color: #707070;
+    }
+  }
+}
+
+.contact {
+  &-content {
+    max-width: 636px;
+    h4 {
+      margin-bottom: 24px;
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+    p {
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+    @include pad {
+      max-width: 576px;
+    }
+  }
+  &-list li:not(:nth-last-child(-n + 1)) {
+    margin-bottom: 16px;
+  }
+  &-form {
+    &-label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    &-input {
+      display: block;
+      width: 100%;
+      background: $bg-light;
+      outline: 0;
+      border: solid 1px black;
+      padding: 6px 12px;
+      font-size: 16px;
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+      }
+    }
+    &-button {
+      display: block;
+      max-width: 416px;
+      padding: 16px 0px;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+        transition: 0.3s;
+      }
+      @include pad {
+        max-width: 336px;
+      }
+    }
+  }
+  &-list textarea {
+    resize: none;
+  }
+}
+
+.agree-item {
+  input {
+    width: 20px;
+    height: 20px;
+    margin: 2px 4px 0px 4px;
+    appearance: none;
+    border: 1px solid #000;
+    border-radius: 2px;
+    flex-shrink: 0;
+    /* background-color: var(--bg-light); */ /* 為了增加底色但沒作用 */
+
+    /* GPT大神提供-增加checkbox底色 */
+    &[type="checkbox"]:checked {
+      background-color: #349beb; /* 选中时的底色 */
+      border-color: #000; /* 选中时的边框色 */
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 6px;
+        height: 12px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  @include mobile {
+    margin-bottom: 24px;
+  }
+}
